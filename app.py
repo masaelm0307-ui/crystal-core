@@ -7,8 +7,6 @@ import random
 import platform
 import numpy as np
 
-print = st.write
-
 # [道具が足りない場合は自動でインストールする魔法のコード]
 def install_dependencies():
     try:
@@ -530,3 +528,10 @@ if __name__ == "__main__":
     
     trigger = PAC_ASI_Final_Decision_Trigger(); trigger.robotics_fusion(); trigger.the_ultimate_goal(); trigger.press_to_change_world()
     engine.visualize_chaos_to_order(None)
+# 最後に結果とグラフを強制表示
+st.write("---")
+st.write("### 💎 ASI Analysis Completed")
+import matplotlib.pyplot as plt
+st.pyplot(plt)
+
+
