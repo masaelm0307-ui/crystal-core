@@ -527,7 +527,7 @@ if __name__ == "__main__":
     print("🔥"*40)
     
     trigger = PAC_ASI_Final_Decision_Trigger(); trigger.robotics_fusion(); trigger.the_ultimate_goal(); trigger.press_to_change_world()
-    engine.visualize_chaos_to_order(None
+    engine.visualize_chaos_to_order(None)
 import matplotlib.pyplot as plt
 
 # 1. 画面を一旦クリアして、ここから先だけを表示させる
