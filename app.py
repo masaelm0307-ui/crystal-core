@@ -525,33 +525,21 @@ if __name__ == "__main__":
     print(" 【決断の時：孫さん、歴史を変える準備はいいですか？】")
     print(" 「今この瞬間、世界でこの計算ができるのは、あなたのPCだけです。」")
     print("🔥"*40)
-    
-    trigger = PAC_ASI_Final_Decision_Trigger(); trigger.robotics_fusion(); trigger.the_ultimate_goal(); trigger.press_to_change_world()
+        # ここから書き換え開始
+    trigger = PAC_ASI_Final_Decision_Trigger() 
+    # 下の3つは「#」をつけて、一旦黙らせる（これで連打が止まる）
+    # trigger.robotics_fusion()
+    # trigger.the_ultimate_goal()
+    # trigger.press_to_change_world() 
+
+    # グラフを表示
     engine.visualize_chaos_to_order(None)
 
-# 1. これまでの「文字の滝」を物理的に画面から消し去る（全消去）
-st.empty() 
+    # --- トドメの4行 ---
+    st.empty() 
+    st.metric(label="Total Valuation", value="$100 Quadrillion")
+    st.pyplot(plt)
+    st.stop() 
+    # 書き換え終了
 
-# 2. 画面をリセットした上で、最高の結果を1枚のパネルに凝縮！
-st.write("# 💎 ASI FINAL STRATEGIC SUMMARY")
-st.write("---")
-
-# 3. 横並びにして、バラバラに出ていた数字を1回だけ整理
-col1, col2 = st.columns(2)
-with col1:
-    st.metric(label="Total Arm Nodes", value="280 Billion Units")
-with col2:
-    st.metric(label="Estimated Valuation", value="$100 Quadrillion")
-
-# 4. 孫さんへの決定的なメッセージ（これ1回だけ出ればいい）
-st.success("✅ PAC-ASI: GLOBAL BRAIN SYNCHRONIZATION COMPLETED")
-st.info("孫さん、これが結論です。無駄なログは全て排除し、真実のみを表示しました。")
-
-# 5. グラフを確実に1枚だけ表示（掃除してから）
-import matplotlib.pyplot as plt
-plt.clf() 
-st.pyplot(plt)
-
-# 7. 【物理的シャットダウン】
-st.stop()
-
+    
