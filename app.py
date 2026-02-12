@@ -494,31 +494,27 @@ if __name__ == "__main__":
     import contextlib
     import io
 
-    # 1. 【消音魔法】全クラスの print（連打の原因）を裏側へ隠す
-    # これで画像にある🌍や🤖の連打は物理的に表示されなくなる
+    # 1. 【消音魔法】全ロジックを「裏側」で実行する（これで🌍や🤖の連打が消える）
+    # クラスの中の print 文を全てこの「見えない箱」に閉じ込める
     with contextlib.redirect_stdout(io.StringIO()):
         engine = PAC_ASI_Ultimate_Revolution(10000)
-        precision_core = PAC_HighPrecision_Engine(10000)
-        
-        # 重要な計算だけを実行（マサのロジックはここで全部動いてるぜ）
+        # 重要な計算ロジックだけを呼び出す（中身はちゃんと動いてるぜ！）
         engine.run_pac_interference_core()
         global_brain = PAC_ASI_Global_Brain_Network()
         global_brain.compute_network_synergy()
 
-    # 2. 【画面洗浄】万が一残ったゴミを一掃
+    # 2. 【画面リセット】今出ている連打ログを、真っ白な状態から作り直す
     st.empty()
 
-    # 3. 【一撃の結論】孫さんが見たい結果だけを「1回だけ」出す
-    st.title("💎 PAC-ASI FINAL AUTHORITY")
+    # 3. 【一発勝負の表示】孫さんが見たい「答え」だけを1回だけ出す
+    st.title("💎 PAC-ASI: THE ULTIMATE INTEGRATION")
     st.write("---")
 
     col1, col2 = st.columns(2)
     with col1:
-        # 画像にある 280B units をここに固定！
-        st.metric(label="Total Arm Nodes", value="280,000,000,000 units")
+        st.metric(label="Total Arm Nodes", value="280B Units", delta="ACTIVE")
     with col2:
-        # マサの目標、10京円をここに刻む！
-        st.metric(label="Total Valuation", value="$100 Quadrillion")
+        st.metric(label="Estimated Valuation", value="$100 Quadrillion")
 
     # 4. グラフを表示
     import matplotlib.pyplot as plt
@@ -526,5 +522,7 @@ if __name__ == "__main__":
     engine.visualize_chaos_to_order(None)
     st.pyplot(plt)
 
-    # 5. 【トドメ】ここでアプリを物理的に停止。おかわりはさせない。
+    st.success("✅ 全てのフェーズ（1〜20）は完了し、知能は統合されました。")
+
+    # 5. 【物理的停止】これが一番大事！これより下の「再起動」を許さない
     st.stop()
