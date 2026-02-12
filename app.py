@@ -528,10 +528,16 @@ if __name__ == "__main__":
     
     trigger = PAC_ASI_Final_Decision_Trigger(); trigger.robotics_fusion(); trigger.the_ultimate_goal(); trigger.press_to_change_world()
     engine.visualize_chaos_to_order(None)
-# 最後に結果とグラフを強制表示
-st.write("---")
-st.write("### 💎 ASI Analysis Completed")
 import matplotlib.pyplot as plt
+
+# 1. 溜まった文字情報を一回区切って、成功したことを伝える
+st.write("---")
+st.success("✅ ASI Computation Matrix: Stable")
+
+# 2. グラフを軽くして表示する（plt.clf() がミソだぜ）
+plt.clf() 
+st.write("### 💎 The Singularity Roadmap ($100 Quadrillion)")
 st.pyplot(plt)
+
 
 
