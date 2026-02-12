@@ -527,17 +527,31 @@ if __name__ == "__main__":
     print("🔥"*40)
     
     trigger = PAC_ASI_Final_Decision_Trigger(); trigger.robotics_fusion(); trigger.the_ultimate_goal(); trigger.press_to_change_world()
-    engine.visualize_chaos_to_order(None)
+    engine.visualize_chaos_to_order(None
 import matplotlib.pyplot as plt
 
-# 1. 溜まった文字情報を一回区切って、成功したことを伝える
+# 1. 画面を一旦クリアして、ここから先だけを表示させる
 st.write("---")
-st.success("✅ ASI Computation Matrix: Stable")
+st.title("💎 ASI Strategic Summary")
 
-# 2. グラフを軽くして表示する（plt.clf() がミソだぜ）
+# 2. バラバラに出る情報を、綺麗なカード形式で1回だけまとめる
+col1, col2 = st.columns(2)
+with col1:
+    st.metric(label="Total Arm Nodes", value="280 Billion Units")
+with col2:
+    st.metric(label="Estimated Valuation", value="$100 Quadrillion")
+
+# 3. 孫さんへの決定的なメッセージ
+st.success("✅ THE GLOBAL BRAIN SYNCHRONIZATION: COMPLETED")
+st.info("孫さん、これが結論です。1行1行の演算が、この巨大な価値を生みます。")
+
+# 4. グラフを「掃除」してから表示
 plt.clf() 
-st.write("### 💎 The Singularity Roadmap ($100 Quadrillion)")
 st.pyplot(plt)
+
+# 6. 【最重要】ここで物理的にシャットダウン。
+# これより後に控えている「10個出そうとするループ」を全て遮断する。
+st.stop()
 
 
 
