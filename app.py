@@ -7,7 +7,7 @@ import random
 import platform
 import numpy as np
 
-print ＝　st.write
+print = st.write
 
 # [道具が足りない場合は自動でインストールする魔法のコード]
 def install_dependencies():
