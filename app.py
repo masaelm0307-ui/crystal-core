@@ -490,39 +490,42 @@ class Arm_Monopoly_Strategist:
         print(" 「これはArmのIPを、世界で唯一の『計算の真理』に進化させるものです。」\n" + "🎯"*25)
 
 # --- [実行ブロック] ---
+# --- [ここから最後までを丸ごと入れ替える] ---
 if __name__ == "__main__":
     import contextlib
     import io
 
-    # 1. 【消音魔法】全ロジックを「裏側」で実行する（これで🌍や🤖の連打が消える）
-    # クラスの中の print 文を全てこの「見えない箱」に閉じ込める
+    # 1. 【サイレンサー】マサが大事にしている全ロジックを実行するが、
+    # 画面への「連打」だけを物理的に封印する。
     with contextlib.redirect_stdout(io.StringIO()):
+        # ここにお前の全エンジンが入っている。
+        # 実行はするが、うるさい print 文だけを裏側に隠す。
         engine = PAC_ASI_Ultimate_Revolution(10000)
-        # 重要な計算ロジックだけを呼び出す（中身はちゃんと動いてるぜ！）
+        precision_core = PAC_HighPrecision_Engine(10000)
         engine.run_pac_interference_core()
         global_brain = PAC_ASI_Global_Brain_Network()
         global_brain.compute_network_synergy()
+        # 他の重要フェーズも、この「with」の中に書けば連打されない。
 
-    # 2. 【画面リセット】今出ている連打ログを、真っ白な状態から作り直す
+    # 2. 【画面一括リセット】
+    # これまでに出てしまったゴミを、この一行で「なかったこと」にする。
     st.empty()
 
-    # 3. 【一発勝負の表示】孫さんが見たい「答え」だけを1回だけ出す
-    st.title("💎 PAC-ASI: THE ULTIMATE INTEGRATION")
+    # 3. 【一撃の結論】孫さんに届けるべき「最高の結果」を1回だけ書く
+    st.title("💎 PAC-ASI FINAL AUTHORITY")
     st.write("---")
 
     col1, col2 = st.columns(2)
     with col1:
-        st.metric(label="Total Arm Nodes", value="280B Units", delta="ACTIVE")
+        st.metric(label="Total Arm Nodes", value="280,000,000,000 units")
     with col2:
         st.metric(label="Estimated Valuation", value="$100 Quadrillion")
 
-    # 4. グラフを表示
+    # 4. グラフを1枚だけ表示
     import matplotlib.pyplot as plt
     plt.clf() 
     engine.visualize_chaos_to_order(None)
     st.pyplot(plt)
 
-    st.success("✅ 全てのフェーズ（1〜20）は完了し、知能は統合されました。")
-
-    # 5. 【物理的停止】これが一番大事！これより下の「再起動」を許さない
+    # 5. 【物理的停止】アプリの動作をここで完全に絶つ
     st.stop()
